@@ -1,0 +1,48 @@
+[Workspace loaded from C:/Users/Chaemin/Desktop/R_prgm/.RData]
+
+> nyc = na.omit(ny)
+> library(ggplot2)
+> 
+> # What are the counts of each gender in NYC ?
+> ggplot(aes(x = Gender), data = nyc)+geom_bar()
+> 
+> ##Male used 37,201 times of the bikeshare service in NYC which are about 3 times more than that of female
+> 
+> 
+> # What are most recent, most common year of birth IN NYC ?
+> ggplot(aes(x=Birth.Year), data = nyc)+geom_histogram()+scale_x_continuous(limits=c(1950,2000), breaks=seq(1950, 2000,3))
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+Warning messages:
+1: Removed 3397 rows containing non-finite values (stat_bin). 
+2: Removed 2 rows containing missing values (geom_bar). 
+> 
+> nyc = na.omit(ny)
+> library(ggplot2)
+> 
+> # What are the counts of each gender in NYC ?
+> table(nyc$Gender)
+
+       Female   Male 
+   998  66778 204004 
+> ggplot(aes(x = Gender), data = nyc)+geom_bar()
+> 
+> ##Male used 37,201 times of the bikeshare service in NYC which are about 3 times more than that of female
+> 
+> # What are most recent, most common year of birth IN NYC ?
+> summary(nyc$Birth.Year, nyc))
+Error: unexpected ')' in "summary(nyc$Birth.Year, nyc))"
+> ggplot(aes(x=Birth.Year), data = nyc)+geom_histogram()+scale_x_continuous(limits=c(1950,2000), breaks=seq(1950, 2000,3))
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+Warning messages:
+1: Removed 3397 rows containing non-finite values (stat_bin). 
+2: Removed 2 rows containing missing values (geom_bar). 
+> 
+> ## Most recent year of birth is 2001 and most common year of birth is 1981 in nyc
+> 
+> # What are the counts of each user type in NYC?
+> table(ny$User.Type)
+
+             Customer Subscriber 
+       692      30159     269149 
+> ggplot(aes(x = User.Type), data = nyc)+geom_bar()
+> ## Subscribers are 10 times more than customer
